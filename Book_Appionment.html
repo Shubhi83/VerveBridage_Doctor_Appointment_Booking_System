@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-container {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none; /* Hide forms by default */
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"],
+        .form-container input[type="email"],
+        .form-container input[type="date"],
+        .form-container input[type="time"],
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        .form-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .form-wrapper img {
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">MyWebsite</div>
+        <nav>
+            <button id="homes">Home</button>
+            <button id="aboutButton">About</button>
+            <button id="alldoctors">All Doctors</button>
+            <button id="BookAppionment" onclick="showForm('appointmentForm-container')">Book Appointment</button>
+            <button id="contact">Contacts</button>
+            <button onclick="showForm('create-account-form-container')">Create Account</button>
+        </nav>
+    </header>
+
+    
+    
+    <div class="form-wrapper">
+        <div class="form-container" id="create-account-form-container">
+            <h2>Create Account</h2>
+            <form id="create-account-form" onsubmit="handleSubmit(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="mobile">Mobile no:</label>
+                <input type="text" id="mobile" name="mobile" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="date">Appointment Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                <label for="doctor">Doctor:</label>
+                <input type="text" id="doctor" name="doctor" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="form-container" id="appointmentForm-container">
+            <h2>Book an Appointment</h2>
+            <form id="appointmentForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctor">Doctor</label>
+                    <input type="text" id="doctor" name="doctor" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Book Appointment</button>
+                </div>
+            </form>
+        </div>
+
+        <img src="C:\Users\shubhi sahu\Book\appionment.png" alt="Doctor Image">
+    </div>
+
+    <div class="message" id="message">
+        Account created successfully!
+    </div>
+
+    <script>
+        function showForm(formId) {
+            // Hide all forms
+            document.querySelectorAll('.form-container').forEach(form => form.style.display = 'none');
+            // Show the selected form
+            document.getElementById(formId).style.display = 'block';
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            localStorage.setItem('formData', JSON.stringify(data));
+            window.location.href = 'Booking.html';
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-container {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            display: block;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"],
+        .form-container input[type="email"],
+        .form-container input[type="date"],
+        .form-container input[type="time"],
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: blue;
+        }
+
+        .form-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px; /* Add some space between the form and the image */
+        }
+
+        .form-wrapper img {
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+    position: relative;
+    left: 120px;
+    top: -70px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add some space between the items */
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add some space between the icon and the text */
+}
+
+.contact-info img {
+    width: 60px;
+    height: 60px;
+}
+#successMessage {
+            display: none;
+            background-color:blue;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">MyWebsite</div>
+        <nav>
+            <button id="homes">Home</button>
+            <button id="aboutButton">About</button>
+            <button id="alldoctors">All Doctors</button>
+            <button id="BookAppionment" onclick="showForm('appointmentForm-container')">Book Appionment</button>
+            <button id="contact">Contacts</button>
+            <form id="appointmentForm" onsubmit="handleSubmit(event)">
+                <button type="submit" id="bookButton">Book Appioment</button>
+              </form>
+              
+            
+        </nav>
+        
+    </header>
+    <div id="successMessage" style="display: none;">Thank you for your feedback!</div>
+    
+    
+    <div class="form-wrapper">
+        <div class="form-container" id="appointmentForm-container">
+            <h2>Feedback Form</h2>
+            <form id="appointmentForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sumbit</button>
+                </div>
+            </form>
+        </div>
+        
+        <img src="C:\Users\shubhi sahu\Book\contact.png" alt="Doctor Image">
+    </div>
+
+    <div class="contact-info">
+        <div>
+            <img src="C:\Users\shubhi sahu\Book\Location icon.jpeg" alt="Address Icon" width="20">
+            <span>123 Main Street, Kanpur, UP</span>
+        </div>
+        <div>
+            <img src="C:\Users\shubhi sahu\Book\phoneicon.png" alt="Phone Icon" width="20">
+            <span>+91 12345 67890</span>
+        </div>
+        <div>
+            <img src="C:\Users\shubhi sahu\Book\Messageicon.png" alt="Email Icon" width="20">
+            <span>contact@yourdomain.com</span>
+        </div>
+    </div>
+    <div class="map">
+        <h2>Our Location</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d144.9630579153168!3d-37.8141079797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d1f9f1b1e0e!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1611810190844!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="social-proof">
+        <h2>What Our Clients Say</h2>
+        <p>"Excellent service and support!" - Client A</p>
+        <p>"Highly recommend this company." - Client B</p>
+    </div>
+    <div class="privacy-statement">
+        <p>We value your privacy. Your information is safe with us and will not be shared.</p>
+    </div>
+</div>
+    <script>
+        function handleSubmit(event) {
+          event.preventDefault(); // Prevent form submission
+          document.getElementById('successMessage').style.display = 'block'; // Show success message
+        }
+      </script>
+      </body>
+</html>
+
+

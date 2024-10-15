@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .success-container {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-container h2 {
+            text-align: center;
+        }
+
+        .success-container p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <h2>Form Submitted Successfully!</h2>
+        <div id="formData"></div>
+         <a href="Index1.html" class="button">Go Back</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formData = JSON.parse(localStorage.getItem('formData'));
+            const formDataDiv = document.getElementById('formData');
+            for (const key in formData) {
+                const p = document.createElement('p');
+                p.textContent = `${key}: ${formData[key]}`;
+                formDataDiv.appendChild(p);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

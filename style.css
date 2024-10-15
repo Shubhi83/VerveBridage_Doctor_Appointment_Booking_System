@@ -1,0 +1,263 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    background-color: #f0f0f0;
+  
+}
+.header {
+    background-color:green;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    
+}
+.h1 {
+    text-align: center;
+}
+.heading {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+
+.header .logo {
+    font-size: 24px;
+    color: #4CAF50;
+}
+.header nav {
+    display: flex;
+    gap: 20px;
+}
+.header-text {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.header nav a, .header nav button {
+    color:white;
+    text-decoration: none;
+    font-size: 18px;
+    margin:0 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.nav-links {
+    margin-right: 20px;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 20px 0;
+}
+.header nav a:hover, .header nav button:hover {
+    text-decoration:underline;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.text {
+    flex: 1;
+    order: 1;
+    padding-right: 20px;
+    
+}
+.image {
+    flex: 1;
+}
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.blue-box {
+    background-color: #e0f7fa;
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+.blue-box img {
+    max-width: 100%;
+    
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    
+
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px; /* Adjust as needed */
+  }
+  
+  .doctor {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .doctor img {
+    width: 150px;
+    height: 150px;
+    border-radius: 0; /* Removes the circular border */
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a shadow around the square */
+  }
+  
+  .doctor-name, .doctor-text {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .doctor-name {
+    font-weight: bold;
+  }
+  
+  .doctor-text {
+    font-size: 1em;
+    color: gray;
+  }
+  
+  /* Media query to increase size on larger screens */
+  @media (min-width: 768px) {
+    .doctor img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+ 
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.form-container {
+    display: none;
+    background-color: #ffffff;
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+
+.form-container {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-container h2 {
+    text-align: center;
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"],
+.form-container input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: blue;
+}
+.form-container button {
+
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.message {
+    background-color: #dff0d8;
+    border: 2px solid #4CAF50;
+    display: none;
+    margin: 20px;
+    padding: 20px;
+    
+    color: white;
+    border-radius: 10px;
+}
+.footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; color: #333; }
+        .contact-info, .contact-form, .business-hours, .team, .map, .social-proof { margin-bottom: 20px; }
+        .contact-info p, .business-hours p, .team p { margin: 5px 0; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin: 5px 0; }
+        .contact-form button { padding: 10px 20px; background-color: #007BFF; color: #fff; border: none; cursor: pointer; }
+        .contact-form button:hover { background-color: #0056b3; }
+        .map iframe { width: 100%; height: 300px; border: 0; 
+
+
+        }
+
+
+
+
+
